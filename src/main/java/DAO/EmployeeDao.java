@@ -116,4 +116,19 @@ public class EmployeeDao {
         }
 
     }
+    public void delete(int id){
+        try {
+            Connection conn = MyConnection.getConnection();
+            final String sql = "DELETE FROM products WHERE id = " +id;
+            Statement stmt = conn.createStatement();
+            long rs = stmt.executeUpdate(sql);
+            if (rs == 0){
+                System.out.println("Delete fail");
+            }
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
