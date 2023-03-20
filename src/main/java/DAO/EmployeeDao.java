@@ -88,28 +88,32 @@ public class EmployeeDao {
         }
         return e;
     }
-//    public void update(Employees employees, long id) {
-//        Employees tmp = getById(id);
-//        if (tmp == null) {
-//            throw new RuntimeException("Sản phẩm không tồn tại!");
-//        }
-//
-//        final String sql = String.format("UPDATE `employees` SET `Employees`='%d',`Full_name`='%s',`product_size`='%s',`product_color`='%s',`brand_id`='%d' WHERE `id` = '%d'",
-//                employees.getProduct_name(), employees.getProduct_price(), employees.getProduct_size(), employees.getProduct_color(), employees.getBrand_id(), id
-//        );
-//        try {
-//            Connection conn = MyConnection.getConnection();
-//            Statement stmt = conn.createStatement();
-//            long rs = stmt.executeUpdate(sql);
-//
-//            if (rs == 0) {
-//                System.out.println("Cập nhật thất bại");
-//            }
-//            stmt.close();
-//            conn.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+    public void update(Employees employees, long id) {
+        Employees tmp = getById(id);
+        if (tmp == null) {
+            throw new RuntimeException("Sản phẩm không tồn tại!");
+        }
+
+        final String sql = String.format("UPDATE `employees` SET `Employees`='%d',`Full_name`='%s',`born`='%s'," +
+                        "`email`='%s',`Phone_number`='%S',`Address`='%s',`Salary`='%f',`Gender`='%d',`Hire_Date`='%s'," +
+                        "`Position`='%s',`Departmet_ID`='%d' WHERE `id` = '%d'",
+                employees.getEmployee_id(), employees.getFull_name(), employees.getBorn(), employees.getEmail(),
+                employees.getPhone_number(), employees.getAddress(),employees.getSalary(), employees.getGender(),
+                employees.getHire_date(), employees.getPosition(), employees.getDepartment_id(),id
+        );
+        try {
+            Connection conn = MyConnection.getConnection();
+            Statement stmt = conn.createStatement();
+            long rs = stmt.executeUpdate(sql);
+
+            if (rs == 0) {
+                System.out.println("Cập nhật thất bại");
+            }
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }
