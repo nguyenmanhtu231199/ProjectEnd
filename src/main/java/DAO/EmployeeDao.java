@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
-    public List<Employees> getAll() {
+    public static List<Employees> getAll() {
         List<Employees> employeesList = new ArrayList<>();
         try {
             Connection conn = MyConnection.getConnection();
