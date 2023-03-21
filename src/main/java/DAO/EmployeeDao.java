@@ -1,6 +1,6 @@
 package DAO;
 
-import Company.Employees;
+import Model.Employees;
 import Connection.MyConnection;
 
 import java.sql.Connection;

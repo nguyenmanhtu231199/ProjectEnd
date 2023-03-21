@@ -1,4 +1,4 @@
-package Company;
+package Model;
 
 public class Departments {
     private int department_id;
