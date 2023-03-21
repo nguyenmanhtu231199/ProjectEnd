@@ -25,7 +25,7 @@ public class AccountDao {
             if (resultSet.next()) {
                 account = new Account();
                 account.setId(resultSet.getLong("id"));
-                account.setUsername(resultSet.getString("username"));
+                account.setUsername(resultSet.getString("user"));
             }
             // Dong tai nguyen
             resultSet.close();
@@ -41,7 +41,7 @@ public class AccountDao {
         Account account = null;
         try {
             Connection conn = MyConnection.getConnection();
-            String sql = String.format("SELECT id, username FROM accounts WHERE username='%s' AND password='%s' LIMIT 1 ",
+            String sql = String.format("SELECT id, user FROM accounts WHERE user='%s' AND password='%s' LIMIT 1 ",
                     username, password);
 
             // THUC THI
@@ -50,7 +50,7 @@ public class AccountDao {
             if (resultSet.next()) {
                 account = new Account();
                 account.setId(resultSet.getLong("id"));
-                account.setUsername(resultSet.getString("username"));
+                account.setUsername(resultSet.getString("user"));
             }
         } catch (Exception e) {
             e.printStackTrace();
