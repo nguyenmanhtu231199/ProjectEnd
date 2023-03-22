@@ -1,5 +1,7 @@
 import DAO.AccountDao;
+import DAO.DepartmentDao;
 import DAO.EmployeeDao;
+import Model.Departments;
 import Model.Employees;
 import Service.AuthenService;
 
@@ -25,6 +27,7 @@ public class Application {
         System.out.println("9. Chuyển phòng ban cho nhân viên");
         System.out.println("10. Tính thuế thu nhập cá nhân cho nhân viên");
     }
+    // Thêm nhân viên
     private static void option1(Scanner in){
         Employees employees = new Employees();
         System.out.print("Nhập Họ Và Tên : ");
@@ -48,6 +51,67 @@ public class Application {
         System.out.print("Nhập Phòng ban : ");
         employees.setDepartment_id(Integer.parseInt(in.nextLine()));
         EmployeeDao.insert(employees);
+    }
+    //Sửa thông tin nhân viên
+    private static void  option2(Scanner in){
+        Employees e = new Employees();
+        System.out.println("Nhập ID bạn muốn sửa");
+        long id = in.nextLong();
+        System.out.print("Nhập Họ Và Tên : ");
+        e.setFull_name(in.nextLine());
+        System.out.print("Nhập Ngày sinh : ");
+        e.setBorn(in.nextLine());
+        System.out.print("Nhập email : ");
+        e.setBorn(in.nextLine());
+        System.out.print("Nhập Phone Number : ");
+        e.setPhone_number(in.nextLine());
+        System.out.print("Nhập Address : ");
+        e.setAddress(in.nextLine());
+        System.out.print("Nhập Salary : ");
+        e.setSalary(Double.parseDouble(in.nextLine()));
+        System.out.print("Nhập Giới tính : ");;
+        e.setGender(Integer.parseInt(in.nextLine()));
+        System.out.print("Nhập Hire Date : ");
+        e.setHire_date(in.nextLine());
+        System.out.print("Nhập vị trí : ");
+        e.setPosition(in.nextLine());
+        System.out.print("Nhập Phòng ban : ");
+        e.setDepartment_id(Integer.parseInt(in.nextLine()));
+        EmployeeDao.update(e,id);
+
+    }
+    // Xóa nhân viên
+    private static void option3(Scanner in) {
+        Employees s = new Employees();
+        System.out.print("Nhập id nhân viên muốn xóa: ");
+        int id = in.nextInt();
+        EmployeeDao.delete(id);
+    }
+    // Thêm phòng ban
+    private static void option4(Scanner in){
+        Departments departments = new Departments();
+        System.out.println("Nhập Tên Phòng :");
+        departments.setDepartment_name(in.nextLine());
+        DepartmentDao.insert(departments);
+    }
+    // Sửa thong tin phòng ban
+    private static void option5(Scanner in){
+        Departments d = new Departments();
+        System.out.println("Nhập id phòng ban bạn muốn sửa:");
+        long id = in.nextLong();
+//        System.out.println("Nhập tên phòng:");
+//        d.setDepartment_name(in.nextLine());
+//        System.out.println("Nhập trưởng phòng");
+//        int managerID = in.nextInt();
+//        d.setManager_id(managerID);
+        DepartmentDao.update(d,id);
+    }
+    // delete phòng
+    private static void option6(Scanner in){
+        Departments d = new Departments();
+        System.out.println("Nhập id phòng muốn xóa");
+        int id = in.nextInt();
+        DepartmentDao.delete(id);
     }
 
     public static void main(String[] args) {
@@ -95,18 +159,19 @@ public class Application {
                     option1(in);
                     break;
                 case 2:
-
+                    option2(in);
                     break;
                 case 3:
-
+                    option3(in);
                     break;
                 case 4:
-
+                    option4(in);
                     break;
                 case 5:
+                    option5(in);
                     break;
                 case 6:
-
+                    option6(in);
                     break;
                 case 7:
 

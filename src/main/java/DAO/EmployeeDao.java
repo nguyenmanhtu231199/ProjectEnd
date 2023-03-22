@@ -58,7 +58,7 @@ public class EmployeeDao {
             ex.printStackTrace();
         }
     }
-    public Employees getById(long id) {
+    public static Employees getById(long id) {
         final String sql = "SELECT * FROM `employees` WHERE  `id` = " + id;
         Employees e = null;
 
@@ -88,10 +88,10 @@ public class EmployeeDao {
         }
         return e;
     }
-    public void update(Employees employees, long id) {
+    public static void update(Employees employees, long id) {
         Employees tmp = getById(id);
         if (tmp == null) {
-            throw new RuntimeException("Sản phẩm không tồn tại!");
+            throw new RuntimeException("ERROR");
         }
 
         final String sql = String.format("UPDATE `employees` SET `Employees`='%d',`Full_name`='%s',`born`='%s'," +
@@ -116,7 +116,7 @@ public class EmployeeDao {
         }
 
     }
-    public void delete(int id){
+    public static void delete(int id){
         try {
             Connection conn = MyConnection.getConnection();
             final String sql = "DELETE FROM products WHERE id = " +id;
