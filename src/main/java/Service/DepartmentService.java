@@ -7,9 +7,9 @@ import Model.Departments;
 import java.util.Scanner;
 
 public class DepartmentService {
-    private final DepartmentDao departmentDao = new DepartmentDao();
+    private static final DepartmentDao departmentDao = new DepartmentDao();
     //private final List<Employee>  employeeList = new ArrayList<>();
-    public void showDepartment(){
+    public static void showDepartment(){
         System.out.println(departmentDao.getAll());
     }
     // Thêm phòng ban

@@ -160,5 +160,57 @@ public class DepartmentDao {
             e.printStackTrace();
         }
     }
+    public void updateManager(int managerId, int departmentId) {
+        String sql = "" ;
+        if (managerId == 0){
+            sql = "UPDATE departments SET `Manager_ID`= NULL WHERE `Department_ID` = "+departmentId+"";
+        }else {
+            sql = "UPDATE departments SET `Manager_ID`= "+managerId+" WHERE `Department_ID` = "+departmentId+"";
+        }
+        try {
+
+            Connection conn = MyConnection.getConnection();
+            Statement stmt = conn.createStatement();
+
+            long rs = stmt.executeUpdate(sql);
+
+            if (rs == 0) {
+                System.out.println("Cập nhật thất bại");
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+    public Departments getByDepartmentId(int id) {
+        Departments department = null;
+        try {
+
+            Connection conn = MyConnection.getConnection();
+
+            String sql = " SELECT d.Department_ID as Department_ID, d.Manager_ID as Manager_ID" +
+                    " FROM employees e" +
+                    " INNER JOIN departments d " +
+                    " ON e.Department_ID = d.Department_ID" +
+                    " AND e.Employee_ID = d.Manager_ID" +
+                    " WHERE Employee_ID = "+id+"";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            if (rs.next()) {
+                department = new Departments();
+                department.setDepartment_id(rs.getInt("Department_ID"));
+                department.setManager_id(rs.getInt("Manager_ID"));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return department;
+    }
 
 }
