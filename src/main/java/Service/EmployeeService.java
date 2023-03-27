@@ -180,7 +180,7 @@ public class EmployeeService {
         }
         in.close();
     }
-    public void tranferDepartment(Scanner in){
+    public void option10(Scanner in){
 
         System.out.print("\tNhập id nhân viên: ");
         int employeeId = in.nextInt();

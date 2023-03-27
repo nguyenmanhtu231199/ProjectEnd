@@ -74,6 +74,7 @@ public class Application {
                 case 7 -> departmentService.option7(in);
                 case 8 -> departmentService.option8(in);
                 case 9 -> employeeService.option9(in);
+                case 10 -> employeeService.option10(in);
                 case 11 -> employeeService.option11(in);
                 case 12 -> handleMenu();
             }

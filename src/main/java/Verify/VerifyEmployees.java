@@ -36,6 +36,15 @@ public class VerifyEmployees {
         }
         return false;
     }
+    public boolean isCheckDepIdEmployee(int id){
+        Employees employee = employeeDAO.getById(id);
+        for (int i = 0; i<= employeeList.size() ; i++){
+            if (employee.getDepartment_id() == 0){
+                return true;
+            }
+        }
+        return false;
+    }
     public boolean isCheckManagerId(int id){
         for (Departments managerId : departmentList){
             if (managerId.getManager_id() == id){
