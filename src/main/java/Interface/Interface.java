@@ -14,7 +14,7 @@ public class Interface {
         System.out.println("2. Thêm tài khoản mới");
         System.out.println("3. Cập nhật thông tin tài khoản");
         System.out.println("4. Xóa tài khoản theo mã");
-        System.out.println("5. Tìm kiếm tài khoản theo mã");
+        System.out.println("5. Tìm kiếm tài khoản theo mã id");
         System.out.println("6. Quay lại");
         System.out.println("0. Thoát");
     }

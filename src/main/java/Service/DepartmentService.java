@@ -13,14 +13,14 @@ public class DepartmentService {
         System.out.println(departmentDao.getAll());
     }
     // Thêm phòng ban
-    private static void option4(Scanner in){
+    public void option6(Scanner in){
         Departments departments = new Departments();
         System.out.println("Nhập Tên Phòng :");
         departments.setDepartment_name(in.nextLine());
         DepartmentDao.insert(departments);
     }
     // Sửa thong tin phòng ban
-    private static void option5(Scanner in){
+    public void option7(Scanner in){
         Departments d = new Departments();
         System.out.println("Nhập id phòng ban bạn muốn sửa:");
         long id = in.nextLong();
@@ -32,7 +32,7 @@ public class DepartmentService {
         DepartmentDao.update(d,id);
     }
     // delete phòng
-    private static void option6(Scanner in){
+    public void option8(Scanner in){
         Departments d = new Departments();
         System.out.println("Nhập id phòng muốn xóa");
         int id = in.nextInt();

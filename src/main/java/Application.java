@@ -1,8 +1,10 @@
 import DAO.EmployeeDao;
 import Interface.Interface;
+import Model.Account;
 import Model.Departments;
 import Model.Employees;
 import Service.AuthenService;
+import Service.DepartmentService;
 import Service.EmployeeService;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ public class Application {
     static Departments departments = new Departments();
     static AuthenService authenService = new AuthenService();
     static EmployeeService employeeService = new EmployeeService();
+    static DepartmentService departmentService = new DepartmentService();
 
     static  Interface ui = new Interface();
 
@@ -63,6 +66,14 @@ public class Application {
             // Chọn menu
             switch (option) {
                 case 1 -> employeeService.showEmployees();
+                case 2 -> employeeService.option2(in);
+                case 3 -> employeeService.option3(in);
+                case 4 -> employeeService.option4(in);
+                case 5 -> departmentService.showDepartment();
+                case 6 -> departmentService.option6(in);
+                case 7 -> departmentService.option7(in);
+                case 8 -> departmentService.option8(in);
+                case 9 -> employeeService.option9(in);
                 case 12 -> handleMenu();
             }
 
@@ -80,6 +91,10 @@ public class Application {
             // Chọn menu
             switch (option) {
                 case 1 -> authenService.showAllAccount();
+                case 2 -> authenService.insertAccount();
+                case 3 -> authenService.updateAccount();
+                case 4 -> authenService.deleteAccount();
+                case 5 -> authenService.findAccount();
                 case 6 -> handleMenu();
             }
         }
