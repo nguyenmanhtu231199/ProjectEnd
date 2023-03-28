@@ -2,14 +2,14 @@ package Interface;
 
 public class Interface {
     public void showMainMenu(){
-        System.out.println("---------------- M E N U ----------------");
+        System.out.println("----- M E N U -----");
         System.out.println("1. Quản lý thông tin tài khoản");
         System.out.println("2. Quản lý nhân viên");
         System.out.println("3. Đăng xuất");
         System.out.println("0. Thoát");
     }
     public void showAccountMenu(){
-        System.out.println("--------QUẢN LÝ THÔNG TIN TÀI KHOẢN--------");
+        System.out.println("----Account Management ----");
         System.out.println("1. Danh sách tài khoản");
         System.out.println("2. Thêm tài khoản mới");
         System.out.println("3. Cập nhật thông tin tài khoản");
@@ -19,7 +19,7 @@ public class Interface {
         System.out.println("0. Thoát");
     }
     public void showEmployeesMenu() {
-        System.out.println("----QUẢN LÝ THÔNG TIN NHÂN VIÊN----");
+        System.out.println("----Employee Management----");
         System.out.println("1. Danh sách nhân viên");
         System.out.println("2. Thêm nhân viên mới");
         System.out.println("3. Cập nhật thông tin nhân viên");

@@ -32,7 +32,7 @@ public class Application {
         handleMenu();
     }
     private static void checkLogin(){
-        System.out.println("-----------------ĐĂNG NHẬP-----------------");
+        System.out.println("-----------------Welcome to NMT-----------------");
         int count = 3;
         boolean isLoginSuccess = false;
         while(count != 0){
