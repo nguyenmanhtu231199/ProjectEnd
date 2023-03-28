@@ -41,8 +41,8 @@ public class EmployeeDao {
         return employeesList;
     }
     public static void insert(Employees e){
-        final String sql = String.format("INSERT INTO employees VALUES ('%d', '%s', '%s', '%s', '%s','%s', '%f', '%d', '%s', '%s', '%d')",
-                e.getEmployee_id(),e.getFull_name(),e.getBorn(),e.getEmail(),
+        final String sql = String.format("INSERT INTO employees VALUES (NULL, '%s', '%s', '%s', '%s','%s', '%f', '%d', '%s', '%s', '%d')",
+                e.getFull_name(),e.getBorn(),e.getEmail(),
                 e.getPhone_number(),e.getAddress(),e.getSalary(),e.getGender(),e.getHire_date(),
                 e.getPosition(),e.getDepartment_id());
         try {
@@ -59,7 +59,7 @@ public class EmployeeDao {
         }
     }
     public static Employees getById(long id) {
-        final String sql = "SELECT * FROM `employees` WHERE  `id` = " + id;
+        final String sql = "SELECT * FROM `employees` WHERE  `Employee_ID` = " + id;
         Employees e = null;
 
         try {
@@ -68,7 +68,7 @@ public class EmployeeDao {
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                 e = new Employees();
-                e.setEmployee_id(rs.getInt("Employees_ID"));
+                e.setEmployee_id(rs.getInt("Employee_ID"));
                 e.setFull_name(rs.getString("Full_name"));
                 e.setBorn(rs.getString("born"));
                 e.setEmail(rs.getString("email"));

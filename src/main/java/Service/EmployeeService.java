@@ -122,7 +122,7 @@ public class EmployeeService {
             return;
         }
 
-        String leftAlignFormat = "| %-12d | %-20s | %-15d |%n";
+        String leftAlignFormat = "| %-12d | %-20s | %-15f |%n";
         System.out.format("+--------------+----------------------+-----------------+%n");
         System.out.format("| Mã nhân viên |     Tên nhân viên    |       Lương     |%n");
         System.out.format("+--------------+----------------------+-----------------+%n");
@@ -178,7 +178,7 @@ public class EmployeeService {
         }else {
             System.out.println("\t-Thuế thu nhập cá nhân phải nộp = 0 VNĐ");
         }
-        in.close();
+
     }
     public void option10(Scanner in){
 
