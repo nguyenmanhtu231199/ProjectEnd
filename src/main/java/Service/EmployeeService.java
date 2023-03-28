@@ -20,7 +20,7 @@ public class EmployeeService {
 
     public void showEmployees() {
         employeeList = employeeDAO.getAll();
-        String leftAlignFormat = "| %-12d | %-20s | %-11s  | %-12s  | %-18s  |  %-13s | %-19s | %-10d |%n";
+        String leftAlignFormat = "| %-12d | %-20s | %-11s  | %-12s  | %-18s  |  %-13s | %-19s | %-10f |%n";
         System.out.format("+--------------+----------------------+--------------+---------------+---------------------+----------------+---------------------+------------+%n");
         System.out.format("| Mã nhân viên |     Tên nhân viên    |  Giới tính   |   Ngày sinh   |       Địa chỉ       |  Số điện thoại |        Email        |    Lương   |%n");
         System.out.format("+--------------+----------------------+--------------+---------------+---------------------+----------------+---------------------+------------+%n");

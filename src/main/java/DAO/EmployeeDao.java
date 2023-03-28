@@ -19,7 +19,7 @@ public class EmployeeDao {
             ResultSet rs= stmt.executeQuery(sql);
             while (rs.next()){
                 Employees e = new Employees();
-                e.setEmployee_id(rs.getInt("Employees_ID"));
+                e.setEmployee_id(rs.getInt("Employee_ID"));
                 e.setFull_name(rs.getString("Full_name"));
                 e.setBorn(rs.getString("born"));
                 e.setEmail(rs.getString("email"));
