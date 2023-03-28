@@ -3,35 +3,35 @@ package Interface;
 public class Interface {
     public void showMainMenu(){
         System.out.println("----- M E N U -----");
-        System.out.println("1. Quản lý thông tin tài khoản");
-        System.out.println("2. Quản lý nhân viên");
-        System.out.println("3. Đăng xuất");
-        System.out.println("0. Thoát");
+        System.out.println("1. Account Management");
+        System.out.println("2. Employee Management");
+        System.out.println("3. Log out");
+        System.out.println("0. Exit");
     }
     public void showAccountMenu(){
         System.out.println("----Account Management ----");
-        System.out.println("1. Danh sách tài khoản");
-        System.out.println("2. Thêm tài khoản mới");
-        System.out.println("3. Cập nhật thông tin tài khoản");
-        System.out.println("4. Xóa tài khoản theo mã");
-        System.out.println("5. Tìm kiếm tài khoản theo mã id");
-        System.out.println("6. Quay lại");
-        System.out.println("0. Thoát");
+        System.out.println("1. New accounts list");
+        System.out.println("2. Creat new account");
+        System.out.println("3. Update information account");
+        System.out.println("4. Delete account");
+        System.out.println("5. Search account");
+        System.out.println("6. Back");
+        System.out.println("0. Exit");
     }
     public void showEmployeesMenu() {
         System.out.println("----Employee Management----");
-        System.out.println("1. Danh sách nhân viên");
-        System.out.println("2. Thêm nhân viên mới");
-        System.out.println("3. Cập nhật thông tin nhân viên");
-        System.out.println("4. Xóa nhân viên theo mã");
-        System.out.println("5. Danh sách phòng ban");
-        System.out.println("6. Thêm phòng ban mới");
-        System.out.println("7. Cập nhật phòng ban");
-        System.out.println("8. Xóa phòng ban theo mã");
-        System.out.println("9. Tìm kiếm viên theo theo mã");
-        System.out.println("10. Chuyển phòng ban cho một nhân viên");
-        System.out.println("11. Tính thuế thu nhập cá nhân");
-        System.out.println("12. Quay lại");
-        System.out.println("0. Thoát");
+        System.out.println("1. Employees List");
+        System.out.println("2. Creat new account");
+        System.out.println("3. Update Employee");
+        System.out.println("4. Delete Employee");
+        System.out.println("5. Departments List");
+        System.out.println("6. Create new Department");
+        System.out.println("7. Update Department");
+        System.out.println("8. Delete Department");
+        System.out.println("9. Search Employee");
+        System.out.println("10. Transfer Department to Employee");
+        System.out.println("11. Personal Income Tax");
+        System.out.println("12. Back");
+        System.out.println("0. Exit");
     }
 }
