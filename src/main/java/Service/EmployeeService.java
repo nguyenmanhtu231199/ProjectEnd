@@ -147,6 +147,8 @@ public class EmployeeService {
         int GTBT = 11000000;
         System.out.println("\t-Giảm trừ bản thân = "+formatter.format(GTBT)+" VNĐ");
 
+
+
         //Giảm trừ người phụ thuộc = soNguoiPT x 4,400,000 = mặc định
         int GTNPT = soNguoiPT * 4400000;
         System.out.println("\t-Giảm trừ người phụ thuộc = "+formatter.format(GTNPT)+" VNĐ");
